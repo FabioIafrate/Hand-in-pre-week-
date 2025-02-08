@@ -1,0 +1,167 @@
+---
+title: "Practical One"
+author: Fabio Iafrate
+format: html
+editor: visual
+---
+
+# Practical One {style="text-align: center"}
+
+## Task 1: Missing Values
+
+> Find all rows in “airquality” that have missing values.
+
+This was completed by using the **complete.cases()** function. The **complete.cases()** function checks to see if the rows have missing (NA) values returning *TRUE* if there are no missing values and *FALSE* otherwise.
+
+```{r}
+#####
+data(airquality) #load the data to see it better
+
+missing_rows <- airquality[!complete.cases(airquality), ] #Find all NA rows
+missing_rows_numbers <- as.character(rownames(missing_rows)) #Stores as numbers 
+print(missing_rows_numbers) # Prints to display 
+
+```
+
+The code outputs the row numbers of the rows with missing values
+
+## Task 2: Statistical Analysis of Ozone and Temperature
+
+> Find mean, sd, min, max for each of temperature and ozone level.
+
+This was accomplished in 4 steps:
+
+-   Create vectors containing valid Ozone and Temperature values
+-   Use the built in mean(), sd(), min() and max() functions on these vectors
+-   Create vectors for each set of statistics
+-   Create a data frame using these vectors to be displayed
+
+```{r}
+#Step 1
+valid_ozone <- airquality$Ozone[complete.cases(airquality$Ozone)]
+valid_temp <- airquality$Temp[complete.cases(airquality$Temp)]
+
+#Step 2
+mean_ozone <- mean(valid_ozone)
+sd_ozone <- sd(valid_ozone)
+min_ozone <- min(valid_ozone)
+max_ozone <- max(valid_ozone)
+
+mean_temp <- mean(valid_temp)
+sd_temp <- sd(valid_temp)
+min_temp <- min(valid_temp)
+max_temp <- max(valid_temp)
+
+#Step 3
+ozone_stats <- c(mean_ozone, sd_ozone, min_ozone, max_ozone) #Vector for df
+temp_stats <- c(mean_temp, sd_temp, min_temp, max_temp) #Vector for df
+
+#Step 4
+df <- data.frame(ozone_stats, temp_stats)
+rownames(df) <- c("Mean", "SD", "Min", "Max")
+colnames(df) <- c("Ozone", "Temperature")
+print(df)
+```
+
+## Task 3: Linear Modelling Without Using lm()
+
+> For linear regression, parameter estimates can be found as follows.
+>
+> $$
+> \hat{\beta} = (X^TX)^{-1}X^TY
+> $$Here, Y is the response variable, and X is the design matrix. The cars data (an R data set, also always available in R) contains two variables: speed and distance to stop. Fit a simple linear regression model to these data, i.e. find the estimates, using the equation above, and matrix calculations in R.
+
+Our goal is to estimate the parameters of the regression line using matrix operations rather than the built-in lm() function using R.
+
+I created a function called **matrix_regression** it takes in 2 parameters, a formula and a data set and returns a data frame of the regression summary statistics. The function computes the $\hat{\beta}$ estimates, standard error, RSE, test statistic and p value of the intercept and slope.
+
+The function follows the following steps:
+
+-   Assign values of the Y vector and X design matrix from the equation
+
+-   Compute $X^TX$
+
+-   Compute the inverse of $X^TX$, $(X^TX)^{-1}$
+
+-   Compute $X^TY$
+
+-   Use the formula with the computed values to get $\hat{\beta}$
+
+-   Compute the RSE, standard error, test statistic and p-value in that order
+
+```{r}
+
+############## CARS DATASET ###############
+##### SETUP #####
+data(cars)
+class(cars)
+
+##### FUNCTION ######
+
+matrix_regression <- function(formula, data){
+
+##### VARIABLE DECLARATIONS #####
+y_vec <- model.response(model.frame(formula, data)) #dependent
+x_matrix <- model.matrix(formula, data) #design matrix
+
+
+##### COMPUTING X^TX #####
+xtx_matrix <- t(x_matrix) %*% x_matrix #transpose then matrix multiply
+
+##### INVERSE #####
+inv_matrix <- solve(xtx_matrix) #no b value therefore solves for inverse
+
+##### COMPUTING X^TY #####
+xty <- t(x_matrix) %*% y_vec
+
+##### PARAMETER ESTIMATION USING GIVEN FORMULA #####
+beta <- inv_matrix %*% xty
+
+y_hat <- x_matrix %*% beta
+resids <- y_hat - y_vec
+
+##### RESIDUAL VARIANCE #####
+n_obs <- nrow(data)
+p <- ncol(x_matrix)
+resvar <- sum(resids^2)/(n_obs-p)
+sigma <- sqrt(resvar)
+var_covar_matrix <- resvar * inv_matrix
+
+##### STANDARD ERROR #####
+stderr <- sqrt(diag(var_covar_matrix))
+
+##### T STAT #####
+t_stat <- beta/stderr
+
+##### P-VALUES #####
+p_val <- 2*(1-pt(abs(t_stat), df = n_obs - p))
+
+##### DATAFRAME FOR PRINTING #####
+results <- data.frame(row.names = c("(Intercept)", "Speed"), 
+                      Estimate = beta, 
+                      Std_Error = stderr,
+                      RSE = sigma,
+                      t_statistic = t_stat, 
+                      p_value = p_val)
+return(results)
+
+}
+
+mat_reg <- matrix_regression(dist~speed, cars)
+
+print(mat_reg)
+```
+
+## Task 4: Comparison With lm()
+
+> Check that you get the same $\beta$ estimates as when fitting the linear regression model using lm() in R.
+
+This is self explanatory, we will just use the **lm()** function to get the $\beta$ estimates, we then use the **summary()** function to get the remaining statistics for comparison.
+
+```{R}
+lin_reg_model = lm(dist ~ speed, data = cars)
+print(lin_reg_model)
+summary(lin_reg_model)
+
+```
+
