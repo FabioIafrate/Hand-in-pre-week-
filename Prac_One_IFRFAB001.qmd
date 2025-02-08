@@ -165,3 +165,4 @@ summary(lin_reg_model)
 
 ```
 
+It can be seen that the statistics obtained using the built-in **lm()** function are the same as those obtained using our custom function.
