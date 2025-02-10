@@ -1,7 +1,8 @@
+library(ggplot2)
+install.packages("patchwork")
+library(patchwork)
+
 # Prac2: Creating a custom lowess function 
-
-
-
 ##### 1. Generate Simulated Data #####
 set.seed(1) #Set your seed to 1
 
@@ -54,12 +55,29 @@ customLowess <- function(x, y, f){
 smoothed <- numeric(100)
 smoothed <- customLowess(x_vec, y_vec, 0.1)
 
+built_in_smooth <- lowess(x_vec, y_vec, 0.1, 0)$y #makes it the smoothed y-values as it returns both x and y by default
+
 #Plotting
-plot(x_vec, y_vec, col = "gray", main = "LOWESS Smoothing")
+plot(x_vec, y_vec, col = "gray", main = "LOWESS Custom Function Smoothing") + lines(x_vec, smoothed, col = "red", lwd = 2)
 lines(x_vec, smoothed, col = "red", lwd = 2)
 lines(lowess(x_vec, y_vec, 0.1, 0), col ="green", lwd = 2)
 
 
+##### Plotting for the QMD #####
+#Use ggplot2 because we need to learn
+?ggplot()
+#Plot CUSTOM
+custom_plot <- ggplot(data.frame(x_vec = x_vec, y_vec = y_vec, smoothed = smoothed), aes(x = x_vec, y = y_vec)) + geom_point(color = "gray") + geom_line(aes(y = smoothed), color = "red", lwd = 1) + ggtitle("Custom Function")
+
+#Plot BUILT-IN
+built_in_plot <- ggplot(data.frame(x_vec = x_vec, y_vec = y_vec, built_in_smooth = built_in_smooth), aes(x = x_vec, y = y_vec)) + geom_point(color = "gray") + geom_line(aes(y = built_in_smooth), color = "green", lwd = 1) + ggtitle("Built-in Function")
+
+# custom_plot
+# built_in_plot
+
+custom_plot + built_in_plot
+
+##### Testing work #####
 #test_dist <- abs(x_vec - x_vec[2]) #you can make a new vector by subtracting scalar from vector
 #ordering <- order(test_dist)[1:5] #orders then only stores the first n values
 #dm <- ordering[5]

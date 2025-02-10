@@ -1,5 +1,32 @@
 project:
   title: "Hand-In"
+  type: website
+  output-dir: docs
+
+website: 
+  title: "Peer-Reviewed Hand-in"
+  navbar: 
+    left: 
+      - href: index.qmd #Link page
+        text: "Home"
+      - href: Prac_One_IFRFAB001.qmd
+        text: "Practical 1"
+      - href: Prac2.qmd
+        text: "Practical 2"
+      - href: PracD4.qmd
+        text: "Practical 3 (Day 4)"
+
+format:
+  html: 
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    theme: "cyborg"
+    
+execute: 
+  echo: true
+  warning: false
+  error: false
 
 editor: visual
 

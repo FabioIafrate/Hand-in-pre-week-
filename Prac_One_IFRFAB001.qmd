@@ -14,7 +14,6 @@ editor: visual
 This was completed by using the **complete.cases()** function. The **complete.cases()** function checks to see if the rows have missing (NA) values returning *TRUE* if there are no missing values and *FALSE* otherwise.
 
 ```{r}
-#####
 data(airquality) #load the data to see it better
 
 missing_rows <- airquality[!complete.cases(airquality), ] #Find all NA rows

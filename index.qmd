@@ -1,0 +1,19 @@
+---
+title: "Peer-Reviewed hand-in"
+format: html
+title-block-banner: banner.jpeg
+---
+
+# Home {style="text-align: center"}
+
+**Hi! So, you're going to be peer-reviewing my practicals from the first week of Statistical Computing. This page contains links to all of the practicals just to make things easier for you! :)**
+
+## Available Practicals
+
+> These are all my practicals
+
+[**Practical 1**](Prac_One_IFRFAB001.qmd) **-** Data Analysis and Custom Linear Modelling Function
+
+[**Practical 2**](Prac2.qmd) - Custom Lowess Smoothing Function
+
+[**Practical 3 (Day 4)**](PracD4.qmd) **-** Tidyverse and dplyr dataset manipulation
