@@ -1,7 +1,7 @@
 project:
   title: "Hand-In"
   type: website
-  output-dir: docs
+  output-dir: _site
 
 website: 
   title: "Peer-Reviewed Hand-in"
@@ -21,7 +21,8 @@ format:
     toc: true
     toc-depth: 2
     number-sections: true
-    theme: "cyborg"
+    theme: "cosmo"
+    css: "styles.css"
     
 execute: 
   echo: true

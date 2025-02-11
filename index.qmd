@@ -1,14 +1,15 @@
 ---
 title: "Peer-Reviewed hand-in"
-format: html
-title-block-banner: banner.jpeg
+format: 
+  html:
+    title-banner: "banner.png"
 ---
 
-# Home {style="text-align: center"}
+# Home {.unnumbered style="text-align: center"}
 
 **Hi! So, you're going to be peer-reviewing my practicals from the first week of Statistical Computing. This page contains links to all of the practicals just to make things easier for you! :)**
 
-## Available Practicals
+## Available Practicals {.unnumbered}
 
 > These are all my practicals
 

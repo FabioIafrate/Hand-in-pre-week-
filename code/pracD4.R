@@ -30,19 +30,31 @@ flights_tib
 # dist_tbl[order(dist_tbl$mean_distance), ] #displays in ascending order of mean dist
 
 # essentially get mean and sd for flights in 1st month then display in ascending order
-dist_tbl <- flights |> filter(month == 1) |> group_by(carrier) |>
-  summarise(mean_distance = mean(distance, na.rm = TRUE), sd_distance = sd(distance, na.rm= TRUE)) |> arrange(mean_distance) #does everything besides displaying 
+dist_tbl <- flights |> filter(month == 1) |> 
+  group_by(carrier) |>
+  summarise(
+    mean_distance = mean(distance, na.rm = TRUE), 
+    sd_distance = sd(distance, na.rm= TRUE)
+    ) |> 
+  arrange(mean_distance) #does everything besides displaying 
 dist_tbl #displays
 
 ##### Explain SD #####
 #Explain SD = 0 using code
 # Idea is that there is only 1 flight path therefore no difference in distance 
 carriers_zero <- c("YV", "F9", "AS", "HA")
-flights |> filter(month == 1, carrier %in% carriers_zero) |> group_by(carrier) |> summarize(num_unique_routes = n_distinct(paste(origin, dest, sep = "-")), route = unique(paste(origin, dest, sep = "-")))
+flights |> filter(month == 1, carrier %in% carriers_zero) |>
+  group_by(carrier) |> 
+  summarize(
+    num_unique_routes = n_distinct(paste(origin, dest, sep = "-")),
+    route = unique(paste(origin, dest, sep = "-"))
+    )
 #paste(x, y) allows you to join the two columns into a single string
 
 #Explain SD = NA using code
-flights |> filter(month == 1, carrier=="OO") |> group_by(carrier) |> count(carrier, name = "number_of_flights")
+flights |> filter(month == 1, carrier=="OO") |> 
+  group_by(carrier) |> 
+  count(carrier, name = "number_of_flights")
 # count() cant be used inside summarise because it isnt aggregation and works over the whole dataset
 
 
@@ -50,19 +62,28 @@ flights |> filter(month == 1, carrier=="OO") |> group_by(carrier) |> count(carri
 
 ##### Construct df where carriers = columns, rows = avg dep_delay in each month ####
 #Get the data then pivot it
-delay_tbl <- flights |> group_by(month, carrier) |> summarise(avg_delay = mean(dep_delay, na.rm = TRUE), .groups = "drop") #must drop groups at end or else it's a weird tibble
+delay_tbl <- flights |> group_by(month, carrier) |> 
+  summarise(
+    avg_delay = mean(dep_delay, na.rm = TRUE), 
+    .groups = "drop"
+    ) #must drop groups at end or else it's a weird tibble
 delay_tbl
 
 #pivot the data
-delay_wide <- delay_tbl |> pivot_wider(names_from = carrier, values_from = avg_delay)
+delay_wide <- delay_tbl |> 
+  pivot_wider(
+    names_from = carrier, 
+    values_from = avg_delay
+    )
 # names_from is where the column names come from, values_from are where the column data comes from. Everything else becomes row data 
 delay_wide
 
 ##### Proportion #####
-flights |> drop_na(dep_delay, arr_delay) |> summarize(
-  num_flights = n(), 
-  num_recovered = sum(dep_delay>0 & arr_delay <=0),
-  proportion_delayed_arrived_on_time = num_recovered/num_flights
+flights |> drop_na(dep_delay, arr_delay) |> 
+  summarize(
+    num_flights = n(), 
+    num_recovered = sum(dep_delay>0 & arr_delay <=0),
+    proportion_delayed_arrived_on_time = num_recovered/num_flights
   )
 #drop_na gets rid of na in the params
 
@@ -71,11 +92,19 @@ flights |> drop_na(dep_delay, arr_delay) |> summarize(
 
 #Filter so we only have multi-carrier routes
 multi_carrier_routes <- flights %>% group_by(origin, dest) %>% filter(n_distinct(carrier) > 1) %>% ungroup()
-class(multi_carrier_routes)
+multi_carrier_routes
 
 #I think this is what they ask for in step 1
-routes <- multi_carrier_routes |> select(origin, dest) |> distinct(origin, dest)
+#routes <- multi_carrier_routes |>group_by(origin, dest) |> select(origin, dest) |> distinct(origin, dest, .keep_all = TRUE) |> summarize(num_flights = n(origin, dest))
+routes <- multi_carrier_routes |> 
+  group_by(origin, dest) |> 
+  summarize(num_flights = n(), .groups = 'drop')
 routes
+
+multi_carrier_routes |> 
+  group_by(origin, dest) |> 
+  summarize(num_carriers = n_distinct(carrier), .groups = 'drop') |> 
+  filter(num_carriers > 1)
 
 #Step 2
 arr_delay_carrier <- multi_carrier_routes |> group_by(origin, dest, carrier) |> summarize(avg_arr_delay = mean(arr_delay, na.rm = TRUE), .groups = "drop") |> left_join(airlines, by = "carrier")
@@ -214,11 +243,20 @@ weird_data <- structure(list(id = c("id_1", "id_2", "id_3", "id_4", "id_5",
 
 
 ##### Analyze data #####
-missing_values <- weird_data |> summarise(across(everything(), ~sum(is.na(.)), .names = "missing_{.col}"))
+missing_values <- weird_data |> 
+  summarise(
+    across(everything(), 
+           ~sum(is.na(.)), 
+           .names = "missing_{.col}")
+    )
 missing_values
 #~sum is an anonymous function and makes it so we don't need to define a function, the "." means all columns
 
-missing_values |> pivot_longer(everything(), names_to = "column", values_to = "missing_count") |> filter(missing_count>0)
+missing_values |> pivot_longer(
+  everything(), 
+  names_to = "column", 
+  values_to = "missing_count"
+  ) |> filter(missing_count>0)
 
 #typos have to be strings/characters, find the uniques, so check to see if a character is unique 
 # Maybe do the view_cols thing instead

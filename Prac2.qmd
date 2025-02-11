@@ -5,13 +5,13 @@ format: html
 editor: visual
 ---
 
-# Practical 2 {style="text-align: center"}
+# Practical 2 {.unnumbered style="text-align: center"}
 
 > This practical revolves around implemented a custom Loews smoothing function and comparing the output with the integrated **lowess()** function.
 
-## Data
+## Data {.unnumbered}
 
-### Generate Simulated Data
+### Generate Simulated Data {.unnumbered}
 
 ```{r}
 set.seed(1) #Set your seed to 1
@@ -31,7 +31,7 @@ for (i in 1:100){
 }
 ```
 
-## Implementing the LOWESS Algorithm
+## Implementing the LOWESS Algorithm {.unnumbered}
 
 ```{r}
 customLowess <- function(x, y, f){
@@ -53,7 +53,10 @@ customLowess <- function(x, y, f){
     neighbour_y <- y[neighbours_ordered]
     weight_diag <- diag(weights) #makes a diagonal matrix of the weights
     design_matrix <- cbind(1, neighbour_x)
-    beta <- solve(t(design_matrix)%*%weight_diag%*%design_matrix)%*%t(design_matrix)%*%weight_diag%*%neighbour_y
+    beta <- solve(
+      t(design_matrix)%*%weight_diag%*%design_matrix
+      )%*%
+      t(design_matrix)%*%weight_diag%*%neighbour_y
     
     #Smoothed value
     smoothed_y <- beta[1]+beta[2]*x[i]
@@ -67,7 +70,7 @@ smoothed <- numeric(100)
 smoothed <- customLowess(x_vec, y_vec, 0.1)
 ```
 
-## Comparison with Built-in lowess()
+## Comparison with Built-in lowess() {.unnumbered}
 
 I made use of the **ggplot2** package to create plots of the data and compare them side-by-side as seen below. I needed to install and use the **patchwork** package for the quarto rendering.
 
@@ -81,13 +84,35 @@ library(patchwork)
 smoothed <- numeric(100)
 smoothed <- customLowess(x_vec, y_vec, 0.1)
 
-built_in_smooth <- lowess(x_vec, y_vec, 0.1, 0)$y #makes it the smoothed y-values as it returns both x and y by default
+#makes it the smoothed y-values as it returns 
+#both x and y by default
+built_in_smooth <- lowess(x_vec, y_vec, 0.1, 0)$y 
 
 #Plot CUSTOM
-custom_plot <- ggplot(data.frame(x_vec = x_vec, y_vec = y_vec, smoothed = smoothed), aes(x = x_vec, y = y_vec)) + geom_point(color = "gray") + geom_line(aes(y = smoothed), color = "red", lwd = 1) + ggtitle("Custom Function")
+custom_plot <- ggplot(
+  data.frame(
+    x_vec = x_vec, 
+    y_vec = y_vec, 
+    smoothed = smoothed), 
+  aes(x = x_vec, y = y_vec)) + 
+  geom_point(color = "gray") + 
+  geom_line(
+    aes(y = smoothed), 
+    color = "red", 
+    lwd = 1) + ggtitle("Custom Function")
 
 #Plot BUILT-IN
-built_in_plot <- ggplot(data.frame(x_vec = x_vec, y_vec = y_vec, built_in_smooth = built_in_smooth), aes(x = x_vec, y = y_vec)) + geom_point(color = "gray") + geom_line(aes(y = built_in_smooth), color = "green", lwd = 1) + ggtitle("Built-in Function")
+built_in_plot <- ggplot(
+  data.frame(
+    x_vec = x_vec, 
+    y_vec = y_vec, 
+    built_in_smooth = built_in_smooth), 
+  aes(x = x_vec, y = y_vec)) + 
+  geom_point(color = "gray") + 
+  geom_line(
+    aes(y = built_in_smooth), 
+    color = "green", 
+    lwd = 1) + ggtitle("Built-in Function")
 
 final_plot <- custom_plot + built_in_plot #displays them side-by-side
 final_plot

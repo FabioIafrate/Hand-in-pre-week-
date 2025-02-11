@@ -5,9 +5,9 @@ format: html
 editor: visual
 ---
 
-# Practical One {style="text-align: center"}
+# Practical One {.unnumbered style="text-align: center"}
 
-## Task 1: Missing Values
+## Task 1: Missing Values {.unnumbered}
 
 > Find all rows in “airquality” that have missing values.
 
@@ -24,7 +24,7 @@ print(missing_rows_numbers) # Prints to display
 
 The code outputs the row numbers of the rows with missing values
 
-## Task 2: Statistical Analysis of Ozone and Temperature
+## Task 2: Statistical Analysis of Ozone and Temperature {.unnumbered}
 
 > Find mean, sd, min, max for each of temperature and ozone level.
 
@@ -61,8 +61,8 @@ rownames(df) <- c("Mean", "SD", "Min", "Max")
 colnames(df) <- c("Ozone", "Temperature")
 print(df)
 ```
-
-## Task 3: Linear Modelling Without Using lm()
+ 
+## Task 3: Linear Modelling Without Using lm() {.unnumbered}
 
 > For linear regression, parameter estimates can be found as follows.
 >
@@ -151,7 +151,7 @@ mat_reg <- matrix_regression(dist~speed, cars)
 print(mat_reg)
 ```
 
-## Task 4: Comparison With lm()
+## Task 4: Comparison With lm() {.unnumbered}
 
 > Check that you get the same $\beta$ estimates as when fitting the linear regression model using lm() in R.
 

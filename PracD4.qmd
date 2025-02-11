@@ -5,11 +5,11 @@ format: html
 editor: visual
 ---
 
-# Day 4 Practical {style="text-align: center"}
+# Day 4 Practical {.unnumbered style="text-align: center"}
 
 > Using **tidyr** and **dplyr** to manipulate data frames
 
-## Displaying the Flights Data Set
+## Displaying the Flights Data Set {.unnumbered}
 
 An alternative way to display a data set without using the **print()** function is to transform the data set into a tibble and just call the tibble
 
@@ -25,19 +25,22 @@ flights_tib <- as_tibble(flights)
 flights_tib
 ```
 
-## Rewriting Code Using *dplyr* and the *pipe*
+## Rewriting Code Using *dplyr* and the *pipe* {.unnumbered}
 
 The given code's purpose was to determine the mean distance and stand deviation of distance for each carrier (airline) in the first month of the year, and then display the airlines with these statistics in ascending order of mean distance.
 
 ```{r}
 dist_tbl <- flights |> filter(month == 1) |> group_by(carrier) |>
-  summarise(mean_distance = mean(distance, na.rm = TRUE), sd_distance = sd(distance, na.rm= TRUE)) |> arrange(mean_distance) #does everything besides displaying 
+  summarise(
+    mean_distance = mean(distance, na.rm = TRUE),
+    sd_distance = sd(distance, na.rm= TRUE)
+    ) |> arrange(mean_distance) #does everything besides displaying 
 dist_tbl #displays
 ```
 
-## Standard Deviation Explanation
+## Standard Deviation Explanation {.unnumbered}
 
-### Why Some Carriers Have SD = 0
+### Why Some Carriers Have SD = 0 {.unnumbered}
 
 For a carrier to have a standard deviation of 0, that would imply that all trips are the same distance, which means that the carriers only fly 1 route that month. The carriers which have a standard deviation of 0 are:
 
@@ -52,140 +55,185 @@ For a carrier to have a standard deviation of 0, that would imply that all trips
 ```{r}
 
 carriers_zero <- c("YV", "F9", "AS", "HA")
-flights |> filter(month == 1, carrier %in% carriers_zero) |> group_by(carrier) |> summarize(num_unique_routes = n_distinct(paste(origin, dest, sep = "-")), route = unique(paste(origin, dest, sep = "-")))
+flights |> filter(
+  month == 1, 
+  carrier %in% carriers_zero
+  ) |> group_by(carrier) |> 
+  summarize(
+    num_unique_routes = n_distinct(paste(origin, dest, sep = "-")), 
+    route = unique(paste(origin, dest, sep = "-")))
 
 ```
 
 This code displays the carriers which have 1 route in the 1st month (1 unique route). It confirms the hypothesis that the carriers with a standard deviation of 0 only have 1 route, travelling the same distance.
 
-### Why a Carrier has SD = NA
+### Why a Carrier has SD = NA {.unnumbered}
 
 *NA* is just a representation of missing values. This means that there is not sufficient data to determine the standard deviation of the carrier. This would imply that either there were no flights in the first month or there was only 1 flight in the first month, thus no standard deviation could be determined. The carrier with *NA* standard deviation is OO.
 
 ```{r}
 
-flights |> filter(month == 1, carrier=="OO") |> group_by(carrier) |> count(carrier, name = "number_of_flights")
+flights |> filter(
+  month == 1, 
+  carrier=="OO"
+  ) |> group_by(carrier) |> count(
+    carrier, 
+    name = "number_of_flights")
 
 ```
 
 This code determines the number of flights that carrier OO does. It shows that OO only has 1 flight, thus no standard deviation could be calculated.
 
-## Data Frame with Average Departure Delay rows
+## Data Frame with Average Departure Delay rows {.unnumbered}
 
 The point of this exercise was to create a data frame that would display the average departure delay of each carrier in each month as rows using **dplyr** and **tidyr**. The tibble must be grouped by the month and carrier, and uses the **summarize()** function to obtain the average delays of each carrier for each month. The tibble was then pivoted to place the average delays as the rows.
 
 ```{r}
 #Construct the grouped column tibble
-delay_tbl <- flights |> group_by(month, carrier) |> summarise(avg_delay = mean(dep_delay, na.rm = TRUE), .groups = "drop") #must drop groups at end or else it's a weird tibble
+delay_tbl <- flights |> group_by(month, carrier) |>
+  summarise(
+    avg_delay = mean(dep_delay, na.rm = TRUE), 
+    .groups = "drop") #must drop groups at end or else it's a weird tibble
 
 #Create the data frame with the average delays as rows
-delay_wide <- delay_tbl |> pivot_wider(names_from = carrier, values_from = avg_delay)
+delay_wide <- delay_tbl |> pivot_wider(
+  names_from = carrier, 
+  values_from = avg_delay)
 delay_wide #display
 
 ```
 
-## Proportion of Flights Recovering from Delays
+## Proportion of Flights Recovering from Delays {.unnumbered}
 
 A flight is considered **recovered** if its departure is delayed (**dep_delay \> 0**) and it arrives early or on-time (**arr_delay \<= 0**). In essence, we have to calculate the total number of flights which arrived on time but had their departure delayed, and then divide it by the total number of flights. We also needed to remove all instances of *NA* values as it would inflate the total number of flights erroneously.
 
 ```{r}
 
-flights |> drop_na(dep_delay, arr_delay) |> summarize(
-  num_flights = n(), 
-  num_recovered = sum(dep_delay>0 & arr_delay <=0),
-  proportion_delayed_arrived_on_time = num_recovered/num_flights
-  )
+flights |> drop_na(dep_delay, arr_delay) |> 
+  summarize(
+    num_flights = n(), 
+    num_recovered = sum(dep_delay>0 & arr_delay <=0),
+    proportion_delayed_arrived_on_time = num_recovered/num_flights)
 
 ```
 
 From the code, we can see that the proportion of flights which recovered is 0.1082708, i.e. approximately 10.83% of flights.
 
-## Airline Performance
+## Airline Performance {.unnumbered}
 
 All the sub-questions will consist of us performing analysis on routes that have multiple carriers flying them, so we will create a data frame consisting of this data.
 
 ```{r}
 
-multi_carrier_routes <- flights %>% group_by(origin, dest) %>% filter(n_distinct(carrier) > 1) %>% ungroup()
+multi_carrier_routes <- flights |> 
+  group_by(origin, dest) |> 
+  filter(n_distinct(carrier) > 1) |> 
+  ungroup()
 multi_carrier_routes
 
 ```
 
-### Routes with More than 1 Carrier/Airline
+### Routes with More than 1 Carrier/Airline {.unnumbered}
 
 ```{r}
 
-routes <- multi_carrier_routes |> select(origin, dest) |> distinct(origin, dest)
+routes <- multi_carrier_routes |> 
+  select(origin, dest) |> 
+  distinct(origin, dest)
 routes
 
 ```
 
-### Average Arrival Delay of Airlines on These Routes
+### Average Arrival Delay of Airlines on These Routes {.unnumbered}
 
 ```{r}
 #The more comprehensive data frame
-arr_delay_carrier <- multi_carrier_routes |> group_by(origin, dest, carrier) |> summarize(avg_arr_delay = mean(arr_delay, na.rm = TRUE), .groups = "drop") |> left_join(airlines, by = "carrier")
+arr_delay_carrier <- multi_carrier_routes |>
+  group_by(origin, dest, carrier) |>
+  summarize(
+    avg_arr_delay = mean(arr_delay, na.rm = TRUE),
+    .groups = "drop") |> 
+  left_join(airlines, by = "carrier")
 arr_delay_carrier
 ```
 
 ```{r}
 # The more selective data frame
-airline_names <- arr_delay_carrier |> select(name, avg_arr_delay, origin, dest) #|> distinct(name)
+airline_names <- arr_delay_carrier |> 
+  select(name, avg_arr_delay, origin, dest) 
 airline_names
 ```
 
 The airline names needed to be attached to the data frame with **left_join().**
 
-### Best-Worst Airlines
+### Best-Worst Airlines {.unnumbered}
 
 ```{r}
 #This will show you more data
-best_worst_delay <- arr_delay_carrier |> group_by(origin, dest) |> summarize(
-  best_delay = min(avg_arr_delay, na.rm = TRUE),
-  worst_delay = max(avg_arr_delay, na.rm = TRUE),
-  best_airline = name[which.min(avg_arr_delay)],
-  worst_airline = name[which.max(avg_arr_delay)],
-  delay_diff = worst_delay - best_delay,
-  .groups = "drop"
-)
+best_worst_delay <- arr_delay_carrier |>
+  group_by(origin, dest) |> 
+  summarize(
+    best_delay = min(avg_arr_delay, na.rm = TRUE),
+    worst_delay = max(avg_arr_delay, na.rm = TRUE),
+    best_airline = name[which.min(avg_arr_delay)],
+    worst_airline = name[which.max(avg_arr_delay)],
+    delay_diff = worst_delay - best_delay,
+    .groups = "drop")
 best_worst_delay
 ```
 
 ```{r}
 #This shows you the more specific data
-best_worst_airline <- best_worst_delay |> select(origin, dest, best_airline, worst_airline)
+best_worst_airline <- best_worst_delay |> 
+  select(origin, dest, best_airline, worst_airline)
 best_worst_airline
 ```
 
 I decided to also calculate the difference in delays between the best and worst airlines for each route as it would be used later.
 
-### Route with Greatest Delay Difference
+### Route with Greatest Delay Difference {.unnumbered}
 
 This will make use of the above data frame "best_worst_delay".
 
 ```{r}
-greatest_diff <- best_worst_delay |> arrange(desc(delay_diff)) |> filter(delay_diff == max(delay_diff, na.rm = TRUE)) |> select(origin, dest, best_airline, worst_airline, delay_diff)
+greatest_diff <- best_worst_delay |> 
+  arrange(desc(delay_diff)) |> 
+  filter(delay_diff == max(delay_diff, na.rm = TRUE)) |>
+  select(
+    origin, 
+    dest, 
+    best_airline, 
+    worst_airline, 
+    delay_diff)
 greatest_diff
 ```
 
 > It should be noted that this could also be achieved by slicing the ordered data set at the first row, as that will show the maximum delay difference (~~this is left as an exercise to the reader~~).
 
-### Reason for this Largest Delay Difference
+### Reason for this Largest Delay Difference {.unnumbered}
 
 Potential reasons for this delay difference could be due to insufficient data (i.e. one airline has made a sizable number of trips along the route and the other has only a few very bad/good trips which will skew the data). Other reasons would be unsubstantiated as we do not have data for things such as weather or cleaning times.
 
 ```{r}
-multi_carrier_routes |> left_join(airlines, by = "carrier") |> group_by(origin, dest, carrier ,name) |> summarize(flight_count = n(), .groups = "drop") |> filter(origin == "JFK", dest == "ATL", carrier %in% c("9E", "EV"))
+multi_carrier_routes |> 
+  left_join(airlines, by = "carrier") |>
+  group_by(origin, dest, carrier ,name) |>
+  summarize(flight_count = n(), .groups = "drop") |>
+  filter(
+    origin == "JFK", 
+    dest == "ATL", 
+    carrier %in% c("9E", "EV"))
 
 ```
 
 This code isolates the data of the airlines of interest in order to count how many flights were made on the route with the greatest delay difference. We can see that ExpressJet Airlines Inc. has only made 1 flight along that route which means its average delay is the value of the delay on its only flight, skewing the data.
 
-## Missing Entries, Typos and Inconsistencies 
+## Missing Entries, Typos and Inconsistencies {.unnumbered}
 
 In order to find missing entries, typos and inconsistencies in the data, we first have to load the data. I did this by creating a data object and assigning the data set to it.
 
 ```{r}
+#| echo: false
 weird_data <- structure(list(id = c("id_1", "id_2", "id_3", "id_4", "id_5", 
                       "id_6", "id_7", "id_8", "id_9", "id_10", "id_11", "id_12", "id_13", 
                       "id_14", "id_15", "id_16", "id_17", "id_18", "id_19", "id_20", 
@@ -285,18 +333,27 @@ weird_data <- structure(list(id = c("id_1", "id_2", "id_3", "id_4", "id_5",
                                                                                                                                                                                                                                                   ), class = c("tbl_df", "tbl", "data.frame"))
 ```
 
-### Missing Entries
+### Missing Entries {.unnumbered}
 
 ```{r}
-missing_values <- weird_data |> summarise(across(everything(), ~sum(is.na(.)), .names = "missing_{.col}"))
+missing_values <- weird_data |> 
+  summarise(
+    across(everything(), 
+           ~sum(is.na(.)), 
+           .names = "missing_{.col}"))
 missing_values
 
-missing_values |> pivot_longer(everything(), names_to = "column", values_to = "missing_count") |> filter(missing_count>0)
+missing_values |> 
+  pivot_longer(
+    everything(), 
+    names_to = "column", 
+    values_to = "missing_count") |>
+  filter(missing_count>0)
 ```
 
 This code checks all columns for NA values. The \~ makes this an anonymous function so we do not need to make the function, and the "." is what tells the program to check the entire column. It then displays only the columns with missing values.
 
-### Typos
+### Typos {.unnumbered}
 
 To determine the number of typos, I made use of the **viewcols()** function that comes with the **UtilsDataRSV** package.
 
