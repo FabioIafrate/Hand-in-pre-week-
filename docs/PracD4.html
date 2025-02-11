@@ -70,10 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -154,15 +154,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#day-4-practical" id="toc-day-4-practical" class="nav-link active" data-scroll-target="#day-4-practical"><span class="header-section-number">1</span> Day 4 Practical</a>
+  <li><a href="#day-4-practical" id="toc-day-4-practical" class="nav-link active" data-scroll-target="#day-4-practical">Day 4 Practical</a>
   <ul class="collapse">
-  <li><a href="#displaying-the-flights-data-set" id="toc-displaying-the-flights-data-set" class="nav-link" data-scroll-target="#displaying-the-flights-data-set"><span class="header-section-number">1.1</span> Displaying the Flights Data Set</a></li>
-  <li><a href="#rewriting-code-using-dplyr-and-the-pipe" id="toc-rewriting-code-using-dplyr-and-the-pipe" class="nav-link" data-scroll-target="#rewriting-code-using-dplyr-and-the-pipe"><span class="header-section-number">1.2</span> Rewriting Code Using <em>dplyr</em> and the <em>pipe</em></a></li>
-  <li><a href="#standard-deviation-explanation" id="toc-standard-deviation-explanation" class="nav-link" data-scroll-target="#standard-deviation-explanation"><span class="header-section-number">1.3</span> Standard Deviation Explanation</a></li>
-  <li><a href="#data-frame-with-average-departure-delay-rows" id="toc-data-frame-with-average-departure-delay-rows" class="nav-link" data-scroll-target="#data-frame-with-average-departure-delay-rows"><span class="header-section-number">1.4</span> Data Frame with Average Departure Delay rows</a></li>
-  <li><a href="#proportion-of-flights-recovering-from-delays" id="toc-proportion-of-flights-recovering-from-delays" class="nav-link" data-scroll-target="#proportion-of-flights-recovering-from-delays"><span class="header-section-number">1.5</span> Proportion of Flights Recovering from Delays</a></li>
-  <li><a href="#airline-performance" id="toc-airline-performance" class="nav-link" data-scroll-target="#airline-performance"><span class="header-section-number">1.6</span> Airline Performance</a></li>
-  <li><a href="#missing-entries-typos-and-inconsistencies" id="toc-missing-entries-typos-and-inconsistencies" class="nav-link" data-scroll-target="#missing-entries-typos-and-inconsistencies"><span class="header-section-number">1.7</span> Missing Entries, Typos and Inconsistencies</a></li>
+  <li><a href="#displaying-the-flights-data-set" id="toc-displaying-the-flights-data-set" class="nav-link" data-scroll-target="#displaying-the-flights-data-set">Displaying the Flights Data Set</a></li>
+  <li><a href="#rewriting-code-using-dplyr-and-the-pipe" id="toc-rewriting-code-using-dplyr-and-the-pipe" class="nav-link" data-scroll-target="#rewriting-code-using-dplyr-and-the-pipe">Rewriting Code Using <em>dplyr</em> and the <em>pipe</em></a></li>
+  <li><a href="#standard-deviation-explanation" id="toc-standard-deviation-explanation" class="nav-link" data-scroll-target="#standard-deviation-explanation">Standard Deviation Explanation</a></li>
+  <li><a href="#data-frame-with-average-departure-delay-rows" id="toc-data-frame-with-average-departure-delay-rows" class="nav-link" data-scroll-target="#data-frame-with-average-departure-delay-rows">Data Frame with Average Departure Delay rows</a></li>
+  <li><a href="#proportion-of-flights-recovering-from-delays" id="toc-proportion-of-flights-recovering-from-delays" class="nav-link" data-scroll-target="#proportion-of-flights-recovering-from-delays">Proportion of Flights Recovering from Delays</a></li>
+  <li><a href="#airline-performance" id="toc-airline-performance" class="nav-link" data-scroll-target="#airline-performance">Airline Performance</a></li>
+  <li><a href="#missing-entries-typos-and-inconsistencies" id="toc-missing-entries-typos-and-inconsistencies" class="nav-link" data-scroll-target="#missing-entries-typos-and-inconsistencies">Missing Entries, Typos and Inconsistencies</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -195,13 +195,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="day-4-practical" class="level1" style="text-align: center" data-number="1">
-<h1 style="text-align: center" data-number="1"><span class="header-section-number">1</span> Day 4 Practical</h1>
+<section id="day-4-practical" class="level1 unnumbered" style="text-align: center">
+<h1 class="unnumbered" style="text-align: center">Day 4 Practical</h1>
 <blockquote class="blockquote">
 <p>Using <strong>tidyr</strong> and <strong>dplyr</strong> to manipulate data frames</p>
 </blockquote>
-<section id="displaying-the-flights-data-set" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="displaying-the-flights-data-set"><span class="header-section-number">1.1</span> Displaying the Flights Data Set</h2>
+<section id="displaying-the-flights-data-set" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="displaying-the-flights-data-set">Displaying the Flights Data Set</h2>
 <p>An alternative way to display a data set without using the <strong>print()</strong> function is to transform the data set into a tibble and just call the tibble</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">CRAN =</span> <span class="st">"https://cloud.r-project.org"</span>))</span>
@@ -211,14 +211,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>package 'tidyverse' successfully unpacked and MD5 sums checked
 
 The downloaded binary packages are in
-    C:\Users\fabio\AppData\Local\Temp\Rtmpo1kP51\downloaded_packages</code></pre>
+    C:\Users\fabio\AppData\Local\Temp\Rtmpgr7VaH\downloaded_packages</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"nycflights13"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>package 'nycflights13' successfully unpacked and MD5 sums checked
 
 The downloaded binary packages are in
-    C:\Users\fabio\AppData\Local\Temp\Rtmpo1kP51\downloaded_packages</code></pre>
+    C:\Users\fabio\AppData\Local\Temp\Rtmpgr7VaH\downloaded_packages</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nycflights13)</span>
@@ -246,13 +246,16 @@ The downloaded binary packages are in
 </div>
 </div>
 </section>
-<section id="rewriting-code-using-dplyr-and-the-pipe" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="rewriting-code-using-dplyr-and-the-pipe"><span class="header-section-number">1.2</span> Rewriting Code Using <em>dplyr</em> and the <em>pipe</em></h2>
+<section id="rewriting-code-using-dplyr-and-the-pipe" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="rewriting-code-using-dplyr-and-the-pipe">Rewriting Code Using <em>dplyr</em> and the <em>pipe</em></h2>
 <p>The given code’s purpose was to determine the mean distance and stand deviation of distance for each carrier (airline) in the first month of the year, and then display the airlines with these statistics in ascending order of mean distance.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dist_tbl <span class="ot">&lt;-</span> flights <span class="sc">|&gt;</span> <span class="fu">filter</span>(month <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">|&gt;</span> <span class="fu">group_by</span>(carrier) <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_distance =</span> <span class="fu">mean</span>(distance, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">sd_distance =</span> <span class="fu">sd</span>(distance, <span class="at">na.rm=</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> <span class="fu">arrange</span>(mean_distance) <span class="co">#does everything besides displaying </span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>dist_tbl <span class="co">#displays</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_distance =</span> <span class="fu">mean</span>(distance, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_distance =</span> <span class="fu">sd</span>(distance, <span class="at">na.rm=</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span> <span class="fu">arrange</span>(mean_distance) <span class="co">#does everything besides displaying </span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>dist_tbl <span class="co">#displays</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 16 × 3
    carrier mean_distance sd_distance
@@ -276,10 +279,10 @@ The downloaded binary packages are in
 </div>
 </div>
 </section>
-<section id="standard-deviation-explanation" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="standard-deviation-explanation"><span class="header-section-number">1.3</span> Standard Deviation Explanation</h2>
-<section id="why-some-carriers-have-sd-0" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="why-some-carriers-have-sd-0"><span class="header-section-number">1.3.1</span> Why Some Carriers Have SD = 0</h3>
+<section id="standard-deviation-explanation" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="standard-deviation-explanation">Standard Deviation Explanation</h2>
+<section id="why-some-carriers-have-sd-0" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="why-some-carriers-have-sd-0">Why Some Carriers Have SD = 0</h3>
 <p>For a carrier to have a standard deviation of 0, that would imply that all trips are the same distance, which means that the carriers only fly 1 route that month. The carriers which have a standard deviation of 0 are:</p>
 <ul>
 <li><p>YV</p></li>
@@ -289,7 +292,13 @@ The downloaded binary packages are in
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>carriers_zero <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"YV"</span>, <span class="st">"F9"</span>, <span class="st">"AS"</span>, <span class="st">"HA"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">|&gt;</span> <span class="fu">filter</span>(month <span class="sc">==</span> <span class="dv">1</span>, carrier <span class="sc">%in%</span> carriers_zero) <span class="sc">|&gt;</span> <span class="fu">group_by</span>(carrier) <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">num_unique_routes =</span> <span class="fu">n_distinct</span>(<span class="fu">paste</span>(origin, dest, <span class="at">sep =</span> <span class="st">"-"</span>)), <span class="at">route =</span> <span class="fu">unique</span>(<span class="fu">paste</span>(origin, dest, <span class="at">sep =</span> <span class="st">"-"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">|&gt;</span> <span class="fu">filter</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  month <span class="sc">==</span> <span class="dv">1</span>, </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  carrier <span class="sc">%in%</span> carriers_zero</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> <span class="fu">group_by</span>(carrier) <span class="sc">|&gt;</span> </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">num_unique_routes =</span> <span class="fu">n_distinct</span>(<span class="fu">paste</span>(origin, dest, <span class="at">sep =</span> <span class="st">"-"</span>)), </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">route =</span> <span class="fu">unique</span>(<span class="fu">paste</span>(origin, dest, <span class="at">sep =</span> <span class="st">"-"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 3
   carrier num_unique_routes route  
@@ -302,11 +311,16 @@ The downloaded binary packages are in
 </div>
 <p>This code displays the carriers which have 1 route in the 1st month (1 unique route). It confirms the hypothesis that the carriers with a standard deviation of 0 only have 1 route, travelling the same distance.</p>
 </section>
-<section id="why-a-carrier-has-sd-na" class="level3" data-number="1.3.2">
-<h3 data-number="1.3.2" class="anchored" data-anchor-id="why-a-carrier-has-sd-na"><span class="header-section-number">1.3.2</span> Why a Carrier has SD = NA</h3>
+<section id="why-a-carrier-has-sd-na" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="why-a-carrier-has-sd-na">Why a Carrier has SD = NA</h3>
 <p><em>NA</em> is just a representation of missing values. This means that there is not sufficient data to determine the standard deviation of the carrier. This would imply that either there were no flights in the first month or there was only 1 flight in the first month, thus no standard deviation could be determined. The carrier with <em>NA</em> standard deviation is OO.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">|&gt;</span> <span class="fu">filter</span>(month <span class="sc">==</span> <span class="dv">1</span>, carrier<span class="sc">==</span><span class="st">"OO"</span>) <span class="sc">|&gt;</span> <span class="fu">group_by</span>(carrier) <span class="sc">|&gt;</span> <span class="fu">count</span>(carrier, <span class="at">name =</span> <span class="st">"number_of_flights"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">|&gt;</span> <span class="fu">filter</span>(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  month <span class="sc">==</span> <span class="dv">1</span>, </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  carrier<span class="sc">==</span><span class="st">"OO"</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> <span class="fu">group_by</span>(carrier) <span class="sc">|&gt;</span> <span class="fu">count</span>(</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    carrier, </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"number_of_flights"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
 # Groups:   carrier [1]
@@ -318,16 +332,21 @@ The downloaded binary packages are in
 <p>This code determines the number of flights that carrier OO does. It shows that OO only has 1 flight, thus no standard deviation could be calculated.</p>
 </section>
 </section>
-<section id="data-frame-with-average-departure-delay-rows" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="data-frame-with-average-departure-delay-rows"><span class="header-section-number">1.4</span> Data Frame with Average Departure Delay rows</h2>
+<section id="data-frame-with-average-departure-delay-rows" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="data-frame-with-average-departure-delay-rows">Data Frame with Average Departure Delay rows</h2>
 <p>The point of this exercise was to create a data frame that would display the average departure delay of each carrier in each month as rows using <strong>dplyr</strong> and <strong>tidyr</strong>. The tibble must be grouped by the month and carrier, and uses the <strong>summarize()</strong> function to obtain the average delays of each carrier for each month. The tibble was then pivoted to place the average delays as the rows.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Construct the grouped column tibble</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>delay_tbl <span class="ot">&lt;-</span> flights <span class="sc">|&gt;</span> <span class="fu">group_by</span>(month, carrier) <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">avg_delay =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="co">#must drop groups at end or else it's a weird tibble</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Create the data frame with the average delays as rows</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>delay_wide <span class="ot">&lt;-</span> delay_tbl <span class="sc">|&gt;</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> carrier, <span class="at">values_from =</span> avg_delay)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>delay_wide <span class="co">#display</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>delay_tbl <span class="ot">&lt;-</span> flights <span class="sc">|&gt;</span> <span class="fu">group_by</span>(month, carrier) <span class="sc">|&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_delay =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="co">#must drop groups at end or else it's a weird tibble</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Create the data frame with the average delays as rows</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>delay_wide <span class="ot">&lt;-</span> delay_tbl <span class="sc">|&gt;</span> <span class="fu">pivot_wider</span>(</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">names_from =</span> carrier, </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">values_from =</span> avg_delay)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>delay_wide <span class="co">#display</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12 × 17
    month  `9E`    AA     AS    B6    DL    EV    F9    FL    HA    MQ    OO
@@ -348,15 +367,15 @@ The downloaded binary packages are in
 </div>
 </div>
 </section>
-<section id="proportion-of-flights-recovering-from-delays" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="proportion-of-flights-recovering-from-delays"><span class="header-section-number">1.5</span> Proportion of Flights Recovering from Delays</h2>
+<section id="proportion-of-flights-recovering-from-delays" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="proportion-of-flights-recovering-from-delays">Proportion of Flights Recovering from Delays</h2>
 <p>A flight is considered <strong>recovered</strong> if its departure is delayed (<strong>dep_delay &gt; 0</strong>) and it arrives early or on-time (<strong>arr_delay &lt;= 0</strong>). In essence, we have to calculate the total number of flights which arrived on time but had their departure delayed, and then divide it by the total number of flights. We also needed to remove all instances of <em>NA</em> values as it would inflate the total number of flights erroneously.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">|&gt;</span> <span class="fu">drop_na</span>(dep_delay, arr_delay) <span class="sc">|&gt;</span> <span class="fu">summarize</span>(</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">num_flights =</span> <span class="fu">n</span>(), </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">num_recovered =</span> <span class="fu">sum</span>(dep_delay<span class="sc">&gt;</span><span class="dv">0</span> <span class="sc">&amp;</span> arr_delay <span class="sc">&lt;=</span><span class="dv">0</span>),</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">proportion_delayed_arrived_on_time =</span> num_recovered<span class="sc">/</span>num_flights</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">|&gt;</span> <span class="fu">drop_na</span>(dep_delay, arr_delay) <span class="sc">|&gt;</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">num_flights =</span> <span class="fu">n</span>(), </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">num_recovered =</span> <span class="fu">sum</span>(dep_delay<span class="sc">&gt;</span><span class="dv">0</span> <span class="sc">&amp;</span> arr_delay <span class="sc">&lt;=</span><span class="dv">0</span>),</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">proportion_delayed_arrived_on_time =</span> num_recovered<span class="sc">/</span>num_flights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 3
   num_flights num_recovered proportion_delayed_arrived_on_time
@@ -366,12 +385,15 @@ The downloaded binary packages are in
 </div>
 <p>From the code, we can see that the proportion of flights which recovered is 0.1082708, i.e.&nbsp;approximately 10.83% of flights.</p>
 </section>
-<section id="airline-performance" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="airline-performance"><span class="header-section-number">1.6</span> Airline Performance</h2>
+<section id="airline-performance" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="airline-performance">Airline Performance</h2>
 <p>All the sub-questions will consist of us performing analysis on routes that have multiple carriers flying them, so we will create a data frame consisting of this data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>multi_carrier_routes <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(origin, dest) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">n_distinct</span>(carrier) <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>()</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>multi_carrier_routes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>multi_carrier_routes <span class="ot">&lt;-</span> flights <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(origin, dest) <span class="sc">|&gt;</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">n_distinct</span>(carrier) <span class="sc">&gt;</span> <span class="dv">1</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>multi_carrier_routes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 276,735 × 19
     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
@@ -392,11 +414,13 @@ The downloaded binary packages are in
 #   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
 </div>
 </div>
-<section id="routes-with-more-than-1-carrierairline" class="level3" data-number="1.6.1">
-<h3 data-number="1.6.1" class="anchored" data-anchor-id="routes-with-more-than-1-carrierairline"><span class="header-section-number">1.6.1</span> Routes with More than 1 Carrier/Airline</h3>
+<section id="routes-with-more-than-1-carrierairline" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="routes-with-more-than-1-carrierairline">Routes with More than 1 Carrier/Airline</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>routes <span class="ot">&lt;-</span> multi_carrier_routes <span class="sc">|&gt;</span> <span class="fu">select</span>(origin, dest) <span class="sc">|&gt;</span> <span class="fu">distinct</span>(origin, dest)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>routes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>routes <span class="ot">&lt;-</span> multi_carrier_routes <span class="sc">|&gt;</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(origin, dest) <span class="sc">|&gt;</span> </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(origin, dest)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>routes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 128 × 2
    origin dest 
@@ -415,12 +439,17 @@ The downloaded binary packages are in
 </div>
 </div>
 </section>
-<section id="average-arrival-delay-of-airlines-on-these-routes" class="level3" data-number="1.6.2">
-<h3 data-number="1.6.2" class="anchored" data-anchor-id="average-arrival-delay-of-airlines-on-these-routes"><span class="header-section-number">1.6.2</span> Average Arrival Delay of Airlines on These Routes</h3>
+<section id="average-arrival-delay-of-airlines-on-these-routes" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="average-arrival-delay-of-airlines-on-these-routes">Average Arrival Delay of Airlines on These Routes</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The more comprehensive data frame</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>arr_delay_carrier <span class="ot">&lt;-</span> multi_carrier_routes <span class="sc">|&gt;</span> <span class="fu">group_by</span>(origin, dest, carrier) <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">avg_arr_delay =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span> <span class="fu">left_join</span>(airlines, <span class="at">by =</span> <span class="st">"carrier"</span>)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>arr_delay_carrier</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>arr_delay_carrier <span class="ot">&lt;-</span> multi_carrier_routes <span class="sc">|&gt;</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(origin, dest, carrier) <span class="sc">|&gt;</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_arr_delay =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(airlines, <span class="at">by =</span> <span class="st">"carrier"</span>)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>arr_delay_carrier</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 343 × 5
    origin dest  carrier avg_arr_delay name                    
@@ -440,8 +469,9 @@ The downloaded binary packages are in
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The more selective data frame</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>airline_names <span class="ot">&lt;-</span> arr_delay_carrier <span class="sc">|&gt;</span> <span class="fu">select</span>(name, avg_arr_delay, origin, dest) <span class="co">#|&gt; distinct(name)</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>airline_names</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>airline_names <span class="ot">&lt;-</span> arr_delay_carrier <span class="sc">|&gt;</span> </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, avg_arr_delay, origin, dest) </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>airline_names</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 343 × 4
    name                     avg_arr_delay origin dest 
@@ -461,19 +491,20 @@ The downloaded binary packages are in
 </div>
 <p>The airline names needed to be attached to the data frame with <strong>left_join().</strong></p>
 </section>
-<section id="best-worst-airlines" class="level3" data-number="1.6.3">
-<h3 data-number="1.6.3" class="anchored" data-anchor-id="best-worst-airlines"><span class="header-section-number">1.6.3</span> Best-Worst Airlines</h3>
+<section id="best-worst-airlines" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="best-worst-airlines">Best-Worst Airlines</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#This will show you more data</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>best_worst_delay <span class="ot">&lt;-</span> arr_delay_carrier <span class="sc">|&gt;</span> <span class="fu">group_by</span>(origin, dest) <span class="sc">|&gt;</span> <span class="fu">summarize</span>(</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">best_delay =</span> <span class="fu">min</span>(avg_arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">worst_delay =</span> <span class="fu">max</span>(avg_arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">best_airline =</span> name[<span class="fu">which.min</span>(avg_arr_delay)],</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">worst_airline =</span> name[<span class="fu">which.max</span>(avg_arr_delay)],</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">delay_diff =</span> worst_delay <span class="sc">-</span> best_delay,</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>best_worst_delay</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>best_worst_delay <span class="ot">&lt;-</span> arr_delay_carrier <span class="sc">|&gt;</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(origin, dest) <span class="sc">|&gt;</span> </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">best_delay =</span> <span class="fu">min</span>(avg_arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">worst_delay =</span> <span class="fu">max</span>(avg_arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">best_airline =</span> name[<span class="fu">which.min</span>(avg_arr_delay)],</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">worst_airline =</span> name[<span class="fu">which.max</span>(avg_arr_delay)],</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">delay_diff =</span> worst_delay <span class="sc">-</span> best_delay,</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>best_worst_delay</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 128 × 7
    origin dest  best_delay worst_delay best_airline     worst_airline delay_diff
@@ -493,8 +524,9 @@ The downloaded binary packages are in
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#This shows you the more specific data</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>best_worst_airline <span class="ot">&lt;-</span> best_worst_delay <span class="sc">|&gt;</span> <span class="fu">select</span>(origin, dest, best_airline, worst_airline)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>best_worst_airline</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>best_worst_airline <span class="ot">&lt;-</span> best_worst_delay <span class="sc">|&gt;</span> </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(origin, dest, best_airline, worst_airline)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>best_worst_airline</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 128 × 4
    origin dest  best_airline             worst_airline           
@@ -514,12 +546,20 @@ The downloaded binary packages are in
 </div>
 <p>I decided to also calculate the difference in delays between the best and worst airlines for each route as it would be used later.</p>
 </section>
-<section id="route-with-greatest-delay-difference" class="level3" data-number="1.6.4">
-<h3 data-number="1.6.4" class="anchored" data-anchor-id="route-with-greatest-delay-difference"><span class="header-section-number">1.6.4</span> Route with Greatest Delay Difference</h3>
+<section id="route-with-greatest-delay-difference" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="route-with-greatest-delay-difference">Route with Greatest Delay Difference</h3>
 <p>This will make use of the above data frame “best_worst_delay”.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>greatest_diff <span class="ot">&lt;-</span> best_worst_delay <span class="sc">|&gt;</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(delay_diff)) <span class="sc">|&gt;</span> <span class="fu">filter</span>(delay_diff <span class="sc">==</span> <span class="fu">max</span>(delay_diff, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> <span class="fu">select</span>(origin, dest, best_airline, worst_airline, delay_diff)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>greatest_diff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>greatest_diff <span class="ot">&lt;-</span> best_worst_delay <span class="sc">|&gt;</span> </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(delay_diff)) <span class="sc">|&gt;</span> </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(delay_diff <span class="sc">==</span> <span class="fu">max</span>(delay_diff, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    origin, </span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    dest, </span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    best_airline, </span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    worst_airline, </span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    delay_diff)</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>greatest_diff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 5
   origin dest  best_airline      worst_airline            delay_diff
@@ -531,11 +571,18 @@ The downloaded binary packages are in
 <p>It should be noted that this could also be achieved by slicing the ordered data set at the first row, as that will show the maximum delay difference (<del>this is left as an exercise to the reader</del>).</p>
 </blockquote>
 </section>
-<section id="reason-for-this-largest-delay-difference" class="level3" data-number="1.6.5">
-<h3 data-number="1.6.5" class="anchored" data-anchor-id="reason-for-this-largest-delay-difference"><span class="header-section-number">1.6.5</span> Reason for this Largest Delay Difference</h3>
+<section id="reason-for-this-largest-delay-difference" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="reason-for-this-largest-delay-difference">Reason for this Largest Delay Difference</h3>
 <p>Potential reasons for this delay difference could be due to insufficient data (i.e.&nbsp;one airline has made a sizable number of trips along the route and the other has only a few very bad/good trips which will skew the data). Other reasons would be unsubstantiated as we do not have data for things such as weather or cleaning times.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>multi_carrier_routes <span class="sc">|&gt;</span> <span class="fu">left_join</span>(airlines, <span class="at">by =</span> <span class="st">"carrier"</span>) <span class="sc">|&gt;</span> <span class="fu">group_by</span>(origin, dest, carrier ,name) <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">flight_count =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span> <span class="fu">filter</span>(origin <span class="sc">==</span> <span class="st">"JFK"</span>, dest <span class="sc">==</span> <span class="st">"ATL"</span>, carrier <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"9E"</span>, <span class="st">"EV"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>multi_carrier_routes <span class="sc">|&gt;</span> </span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(airlines, <span class="at">by =</span> <span class="st">"carrier"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(origin, dest, carrier ,name) <span class="sc">|&gt;</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">flight_count =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    origin <span class="sc">==</span> <span class="st">"JFK"</span>, </span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    dest <span class="sc">==</span> <span class="st">"ATL"</span>, </span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    carrier <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"9E"</span>, <span class="st">"EV"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 5
   origin dest  carrier name                     flight_count
@@ -547,113 +594,18 @@ The downloaded binary packages are in
 <p>This code isolates the data of the airlines of interest in order to count how many flights were made on the route with the greatest delay difference. We can see that ExpressJet Airlines Inc.&nbsp;has only made 1 flight along that route which means its average delay is the value of the delay on its only flight, skewing the data.</p>
 </section>
 </section>
-<section id="missing-entries-typos-and-inconsistencies" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="missing-entries-typos-and-inconsistencies"><span class="header-section-number">1.7</span> Missing Entries, Typos and Inconsistencies</h2>
+<section id="missing-entries-typos-and-inconsistencies" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="missing-entries-typos-and-inconsistencies">Missing Entries, Typos and Inconsistencies</h2>
 <p>In order to find missing entries, typos and inconsistencies in the data, we first have to load the data. I did this by creating a data object and assigning the data set to it.</p>
+<section id="missing-entries" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="missing-entries">Missing Entries</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>weird_data <span class="ot">&lt;-</span> <span class="fu">structure</span>(<span class="fu">list</span>(<span class="at">id =</span> <span class="fu">c</span>(<span class="st">"id_1"</span>, <span class="st">"id_2"</span>, <span class="st">"id_3"</span>, <span class="st">"id_4"</span>, <span class="st">"id_5"</span>, </span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"id_6"</span>, <span class="st">"id_7"</span>, <span class="st">"id_8"</span>, <span class="st">"id_9"</span>, <span class="st">"id_10"</span>, <span class="st">"id_11"</span>, <span class="st">"id_12"</span>, <span class="st">"id_13"</span>, </span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"id_14"</span>, <span class="st">"id_15"</span>, <span class="st">"id_16"</span>, <span class="st">"id_17"</span>, <span class="st">"id_18"</span>, <span class="st">"id_19"</span>, <span class="st">"id_20"</span>, </span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"id_21"</span>, <span class="st">"id_22"</span>, <span class="st">"id_23"</span>, <span class="st">"id_24"</span>, <span class="st">"id_25"</span>, <span class="st">"id_26"</span>, <span class="st">"id_27"</span>, </span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"id_28"</span>, <span class="st">"id_29"</span>, <span class="st">"id_30"</span>, <span class="st">"id_31"</span>, <span class="st">"id_32"</span>, <span class="st">"id_33"</span>, <span class="st">"id_34"</span>, </span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"id_35"</span>, <span class="st">"id_36"</span>, <span class="st">"id_37"</span>, <span class="st">"id_38"</span>, <span class="st">"id_39"</span>, <span class="st">"id_40"</span>, <span class="st">"id_41"</span>, </span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"id_42"</span>, <span class="st">"id_43"</span>, <span class="st">"id_44"</span>, <span class="st">"id_45"</span>, <span class="st">"id_46"</span>, <span class="st">"id_47"</span>, <span class="st">"id_48"</span>, </span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"id_49"</span>, <span class="st">"id_50"</span>), <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">50</span>L, <span class="dv">34</span>L, <span class="dv">70</span>L, <span class="dv">33</span>L, <span class="dv">22</span>L, <span class="dv">61</span>L, <span class="dv">69</span>L, </span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">73</span>L, <span class="dv">62</span>L, <span class="dv">56</span>L, <span class="dv">71</span>L, <span class="dv">33</span>L, <span class="dv">73</span>L, <span class="dv">44</span>L, <span class="dv">45</span>L, <span class="dv">46</span>L, <span class="dv">24</span>L, <span class="dv">70</span>L, <span class="dv">46</span>L, <span class="dv">76</span>L, </span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">47</span>L, <span class="dv">76</span>L, <span class="dv">28</span>L, <span class="dv">48</span>L, <span class="dv">54</span>L, <span class="dv">27</span>L, <span class="dv">45</span>L, <span class="dv">26</span>L, <span class="dv">61</span>L, <span class="dv">28</span>L, <span class="dv">38</span>L, <span class="dv">55</span>L, <span class="dv">33</span>L, </span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">36</span>L, <span class="dv">62</span>L, <span class="dv">58</span>L, <span class="dv">72</span>L, <span class="dv">31</span>L, <span class="dv">34</span>L, <span class="dv">51</span>L, <span class="dv">61</span>L, <span class="dv">64</span>L, <span class="dv">26</span>L, <span class="dv">28</span>L, <span class="dv">60</span>L, <span class="dv">29</span>L, </span>
-<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>                                                 <span class="dv">42</span>L, <span class="dv">46</span>L, <span class="dv">79</span>L, <span class="dv">72</span>L), <span class="at">gender =</span> <span class="fu">c</span>(<span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, </span>
-<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>                                                                                 <span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"female"</span>, </span>
-<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>                                                                                 <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, </span>
-<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>                                                                                 <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"femal"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, </span>
-<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>                                                                                 <span class="st">"female"</span>, <span class="st">"female"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"female"</span>, <span class="st">"female"</span>, </span>
-<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>                                                                                 <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>, </span>
-<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>                                                                                 <span class="st">"female"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"male"</span>, <span class="st">"male"</span>, </span>
-<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>                                                                                 <span class="st">"male"</span>, <span class="st">"female"</span>), <span class="at">height =</span> <span class="fu">c</span>(<span class="fl">174.4</span>, <span class="fl">197.7</span>, <span class="fl">174.1</span>, <span class="fl">194.5</span>, <span class="cn">NA</span>, </span>
-<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>                                                                                                               <span class="fl">180.4</span>, <span class="fl">170.5</span>, <span class="fl">157.4</span>, <span class="fl">196.8</span>, <span class="fl">165.1</span>, <span class="dv">153</span>, <span class="fl">197.4</span>, <span class="dv">186</span>, <span class="fl">157.1</span>, <span class="fl">177.5</span>, </span>
-<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>                                                                                                               <span class="fl">197.7</span>, <span class="fl">179.3</span>, <span class="fl">170.2</span>, <span class="fl">182.4</span>, <span class="cn">NA</span>, <span class="fl">165.4</span>, <span class="dv">161</span>, <span class="fl">168.5</span>, <span class="fl">199.2</span>, <span class="fl">157.7</span>, </span>
-<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a>                                                                                                               <span class="fl">154.6</span>, <span class="fl">157.1</span>, <span class="fl">184.5</span>, <span class="dv">181</span>, <span class="fl">194.6</span>, <span class="fl">183.6</span>, <span class="fl">186.9</span>, <span class="fl">176.1</span>, <span class="dv">183</span>, <span class="fl">191.1</span>, </span>
-<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a>                                                                                                               <span class="fl">189.3</span>, <span class="dv">199</span>, <span class="dv">172</span>, <span class="fl">165.6</span>, <span class="fl">170.5</span>, <span class="fl">150.5</span>, <span class="fl">159.2</span>, <span class="fl">192.1</span>, <span class="fl">161.6</span>, <span class="dv">162</span>, </span>
-<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a>                                                                                                               <span class="fl">153.8</span>, <span class="fl">162.3</span>, <span class="fl">186.6</span>, <span class="fl">192.4</span>, <span class="fl">174.9</span>), <span class="at">weight =</span> <span class="fu">c</span>(<span class="fl">69.4</span>, <span class="fl">62.3</span>, <span class="fl">55.6</span>, </span>
-<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                              <span class="fl">69.5</span>, <span class="fl">78.6</span>, <span class="fl">60.8</span>, <span class="fl">72.2</span>, <span class="fl">60.9</span>, <span class="fl">75.1</span>, <span class="fl">67.7</span>, <span class="fl">82.5</span>, <span class="fl">68.7</span>, <span class="fl">67.8</span>, <span class="fl">76.7</span>, </span>
-<span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                              <span class="dv">87</span>, <span class="fl">61.1</span>, <span class="fl">70.6</span>, <span class="fl">63.3</span>, <span class="fl">81.5</span>, <span class="fl">59.2</span>, <span class="fl">93.2</span>, <span class="fl">87.3</span>, <span class="fl">83.4</span>, <span class="fl">80.9</span>, <span class="fl">68.6</span>, </span>
-<span id="cb33-27"><a href="#cb33-27" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                              <span class="fl">76.5</span>, <span class="fl">93.7</span>, <span class="fl">79.1</span>, <span class="dv">92</span>, <span class="fl">65.6</span>, <span class="fl">85.4</span>, <span class="fl">63.3</span>, <span class="fl">79.7</span>, <span class="fl">74.1</span>, <span class="fl">63.3</span>, <span class="fl">78.2</span>, </span>
-<span id="cb33-28"><a href="#cb33-28" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                              <span class="fl">95.7</span>, <span class="fl">95.1</span>, <span class="fl">63.7</span>, <span class="fl">66.1</span>, <span class="fl">99.3</span>, <span class="dv">81</span>, <span class="fl">96.9</span>, <span class="fl">73.3</span>, <span class="fl">70.3</span>, <span class="dv">83</span>, <span class="fl">57.6</span>, </span>
-<span id="cb33-29"><a href="#cb33-29" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                              <span class="fl">78.6</span>, <span class="fl">61.9</span>, <span class="fl">98.1</span>), <span class="at">blood_type =</span> <span class="fu">c</span>(<span class="st">"O"</span>, <span class="st">"A"</span>, <span class="st">"O"</span>, <span class="st">"O"</span>, <span class="st">"B"</span>, <span class="st">"AB"</span>, </span>
-<span id="cb33-30"><a href="#cb33-30" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                <span class="st">"O"</span>, <span class="st">"O"</span>, <span class="st">"O"</span>, <span class="st">"AB"</span>, <span class="st">"A"</span>, <span class="st">"O"</span>, <span class="st">"O"</span>, <span class="st">"O"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"AB"</span>, </span>
-<span id="cb33-31"><a href="#cb33-31" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                <span class="st">"O"</span>, <span class="st">"AB"</span>, <span class="st">"A"</span>, <span class="st">"AB"</span>, <span class="st">"O"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"AB"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, </span>
-<span id="cb33-32"><a href="#cb33-32" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                <span class="st">"B"</span>, <span class="st">"A"</span>, <span class="st">"O"</span>, <span class="st">"O"</span>, <span class="st">"O"</span>, <span class="st">"B"</span>, <span class="st">"O"</span>, <span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>, <span class="st">"O"</span>, <span class="st">"AB"</span>, </span>
-<span id="cb33-33"><a href="#cb33-33" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                <span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"O"</span>, <span class="st">"O"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>, <span class="st">"O"</span>), <span class="at">disease_status =</span> <span class="fu">c</span>(<span class="st">"diseased"</span>, </span>
-<span id="cb33-34"><a href="#cb33-34" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                       <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"diseased"</span>, </span>
-<span id="cb33-35"><a href="#cb33-35" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                       <span class="st">"healthy"</span>, <span class="st">"diseased"</span>, <span class="st">"Healthy"</span>, <span class="st">"diseased"</span>, <span class="st">"healthy"</span>, <span class="st">"diseased"</span>, </span>
-<span id="cb33-36"><a href="#cb33-36" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                       <span class="st">"healthy"</span>, <span class="st">"diseased"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, </span>
-<span id="cb33-37"><a href="#cb33-37" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                       <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"diseased"</span>, <span class="st">"healthy"</span>, <span class="st">"diseased"</span>, <span class="st">"healthy"</span>, </span>
-<span id="cb33-38"><a href="#cb33-38" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                       <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"diseased"</span>, <span class="st">"diseased"</span>, <span class="st">"healthy"</span>, </span>
-<span id="cb33-39"><a href="#cb33-39" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                       <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"diseased"</span>, <span class="st">"diseased"</span>, <span class="st">"diseased"</span>, <span class="st">"healthy"</span>, </span>
-<span id="cb33-40"><a href="#cb33-40" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                       <span class="st">"diseased"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, </span>
-<span id="cb33-41"><a href="#cb33-41" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                       <span class="st">"diseased"</span>, <span class="st">"diseased"</span>, <span class="st">"diseased"</span>, <span class="st">"healthy"</span>, <span class="st">"healthy"</span>, <span class="st">"diseased"</span>, </span>
-<span id="cb33-42"><a href="#cb33-42" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                       <span class="st">"diseased"</span>), <span class="at">cholesterol =</span> <span class="fu">c</span>(<span class="dv">228</span>, <span class="dv">223</span>, <span class="dv">213</span>, <span class="dv">198</span>, <span class="dv">166</span>, <span class="dv">151</span>, <span class="dv">195</span>, </span>
-<span id="cb33-43"><a href="#cb33-43" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                                                    <span class="dv">199</span>, <span class="dv">189</span>, <span class="dv">196</span>, <span class="dv">221</span>, <span class="dv">156</span>, <span class="dv">185</span>, <span class="dv">230</span>, <span class="dv">234</span>, <span class="dv">174</span>, <span class="dv">185</span>, <span class="dv">236</span>, <span class="dv">235</span>, <span class="dv">180</span>, </span>
-<span id="cb33-44"><a href="#cb33-44" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                                                    <span class="dv">165</span>, <span class="dv">220</span>, <span class="dv">160</span>, <span class="dv">153</span>, <span class="dv">250</span>, <span class="dv">153</span>, <span class="dv">184</span>, <span class="dv">242</span>, <span class="dv">212</span>, <span class="dv">179</span>, <span class="dv">224</span>, <span class="dv">233</span>, <span class="dv">181</span>, </span>
-<span id="cb33-45"><a href="#cb33-45" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                                                    <span class="dv">199</span>, <span class="dv">220</span>, <span class="dv">214</span>, <span class="dv">214</span>, <span class="dv">248</span>, <span class="dv">191</span>, <span class="dv">162</span>, <span class="dv">203</span>, <span class="dv">173</span>, <span class="dv">199</span>, <span class="dv">187</span>, <span class="dv">248</span>, <span class="dv">189</span>, </span>
-<span id="cb33-46"><a href="#cb33-46" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                                                    <span class="dv">173</span>, <span class="dv">212</span>, <span class="dv">164</span>, <span class="dv">247</span>), <span class="at">glucose =</span> <span class="fu">c</span>(<span class="dv">96</span>, <span class="dv">78</span>, <span class="dv">101</span>, <span class="dv">119</span>, <span class="dv">103</span>, <span class="dv">91</span>, <span class="dv">86</span>, </span>
-<span id="cb33-47"><a href="#cb33-47" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                                                                                     <span class="cn">NA</span>, <span class="dv">77</span>, <span class="dv">80</span>, <span class="dv">115</span>, <span class="dv">85</span>, <span class="dv">88</span>, <span class="dv">109</span>, <span class="cn">NA</span>, <span class="dv">71</span>, <span class="dv">90</span>, <span class="dv">94</span>, <span class="dv">91</span>, <span class="dv">87</span>, <span class="dv">113</span>, <span class="dv">93</span>, </span>
-<span id="cb33-48"><a href="#cb33-48" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                                                                                     <span class="dv">97</span>, <span class="dv">118</span>, <span class="dv">109</span>, <span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">119</span>, <span class="dv">99</span>, <span class="dv">108</span>, <span class="dv">89</span>, <span class="dv">108</span>, <span class="dv">97</span>, <span class="dv">116</span>, <span class="dv">79</span>, <span class="dv">84</span>, </span>
-<span id="cb33-49"><a href="#cb33-49" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                                                                                     <span class="dv">75</span>, <span class="dv">81</span>, <span class="dv">119</span>, <span class="cn">NA</span>, <span class="dv">106</span>, <span class="dv">109</span>, <span class="dv">75</span>, <span class="dv">82</span>, <span class="dv">84</span>, <span class="dv">75</span>, <span class="dv">76</span>, <span class="dv">120</span>, <span class="dv">119</span>, <span class="dv">77</span>), </span>
-<span id="cb33-50"><a href="#cb33-50" aria-hidden="true" tabindex="-1"></a>               <span class="at">smoker =</span> <span class="fu">c</span>(<span class="st">"yes"</span>, <span class="st">"yes"</span>, <span class="st">"yes"</span>, <span class="st">"yes"</span>, <span class="st">"no"</span>, <span class="st">"yes"</span>, <span class="st">"no"</span>, </span>
-<span id="cb33-51"><a href="#cb33-51" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"yes"</span>, <span class="st">"no"</span>, <span class="st">"no"</span>, <span class="st">"no"</span>, <span class="st">"no"</span>, <span class="st">"no"</span>, <span class="st">"yes"</span>, <span class="st">"no"</span>, <span class="st">"yes"</span>, </span>
-<span id="cb33-52"><a href="#cb33-52" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"yes"</span>, <span class="st">"yes"</span>, <span class="st">"yes"</span>, <span class="st">"yes"</span>, <span class="st">"yes"</span>, <span class="st">"yes"</span>, <span class="st">"yes"</span>, <span class="st">"yes"</span>, <span class="st">"no"</span>, </span>
-<span id="cb33-53"><a href="#cb33-53" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"no"</span>, <span class="st">"yes"</span>, <span class="st">"yes"</span>, <span class="st">"yes"</span>, <span class="st">"no"</span>, <span class="st">"no"</span>, <span class="st">"yes"</span>, <span class="st">"no"</span>, <span class="st">"yes"</span>, </span>
-<span id="cb33-54"><a href="#cb33-54" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"no"</span>, <span class="st">"yes"</span>, <span class="st">"no"</span>, <span class="st">"yes"</span>, <span class="st">"yes"</span>, <span class="st">"yes"</span>, <span class="st">"no"</span>, <span class="st">"no"</span>, <span class="st">"yes"</span>, </span>
-<span id="cb33-55"><a href="#cb33-55" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"no"</span>, <span class="st">"no"</span>, <span class="st">"no"</span>, <span class="st">"no"</span>, <span class="st">"no"</span>, <span class="st">"no"</span>, <span class="st">"yes"</span>), <span class="at">exercise =</span> <span class="fu">c</span>(<span class="st">"occasional"</span>, </span>
-<span id="cb33-56"><a href="#cb33-56" aria-hidden="true" tabindex="-1"></a>                                                                                   <span class="st">"regular"</span>, <span class="st">"occasional"</span>, <span class="st">"regular"</span>, <span class="st">"none"</span>, <span class="st">"occasional"</span>, </span>
-<span id="cb33-57"><a href="#cb33-57" aria-hidden="true" tabindex="-1"></a>                                                                                   <span class="st">"regular"</span>, <span class="st">"none"</span>, <span class="st">"occasional"</span>, <span class="st">"none"</span>, <span class="st">"occasional"</span>, <span class="st">"none"</span>, </span>
-<span id="cb33-58"><a href="#cb33-58" aria-hidden="true" tabindex="-1"></a>                                                                                   <span class="st">"none"</span>, <span class="st">"regular"</span>, <span class="st">"occasional"</span>, <span class="st">"none"</span>, <span class="st">"regular"</span>, <span class="st">"regular"</span>, </span>
-<span id="cb33-59"><a href="#cb33-59" aria-hidden="true" tabindex="-1"></a>                                                                                   <span class="st">"none"</span>, <span class="st">"occasional"</span>, <span class="st">"none"</span>, <span class="st">"occasional"</span>, <span class="st">"occasional"</span>, </span>
-<span id="cb33-60"><a href="#cb33-60" aria-hidden="true" tabindex="-1"></a>                                                                                   <span class="st">"occasional"</span>, <span class="st">"regular"</span>, <span class="st">"occasional"</span>, <span class="st">"regular"</span>, <span class="st">"regular"</span>, </span>
-<span id="cb33-61"><a href="#cb33-61" aria-hidden="true" tabindex="-1"></a>                                                                                   <span class="st">"regular"</span>, <span class="st">"occasional"</span>, <span class="st">"occasional"</span>, <span class="st">"none"</span>, <span class="st">"none"</span>, <span class="st">"regular"</span>, </span>
-<span id="cb33-62"><a href="#cb33-62" aria-hidden="true" tabindex="-1"></a>                                                                                   <span class="st">"occasional"</span>, <span class="st">"occasional"</span>, <span class="st">"none"</span>, <span class="st">"none"</span>, <span class="st">"none"</span>, <span class="st">"none"</span>, </span>
-<span id="cb33-63"><a href="#cb33-63" aria-hidden="true" tabindex="-1"></a>                                                                                   <span class="st">"occasional"</span>, <span class="st">"regular"</span>, <span class="st">"regular"</span>, <span class="st">"none"</span>, <span class="st">"regular"</span>, <span class="st">"occasional"</span>, </span>
-<span id="cb33-64"><a href="#cb33-64" aria-hidden="true" tabindex="-1"></a>                                                                                   <span class="st">"occasional"</span>, <span class="st">"none"</span>, <span class="st">"occasional"</span>, <span class="st">"regular"</span>), <span class="at">income =</span> <span class="fu">c</span>(<span class="dv">84820</span>L, </span>
-<span id="cb33-65"><a href="#cb33-65" aria-hidden="true" tabindex="-1"></a>                                                                                                                                              <span class="dv">81547</span>L, <span class="dv">22588</span>L, <span class="dv">72490</span>L, <span class="dv">74533</span>L, <span class="dv">25338</span>L, <span class="dv">41469</span>L, <span class="dv">57315</span>L, <span class="dv">63629</span>L, </span>
-<span id="cb33-66"><a href="#cb33-66" aria-hidden="true" tabindex="-1"></a>                                                                                                                                              <span class="dv">88662</span>L, <span class="dv">62615</span>L, <span class="dv">56261</span>L, <span class="dv">58499</span>L, <span class="dv">82232</span>L, <span class="dv">77584</span>L, <span class="dv">77275</span>L, <span class="dv">38468</span>L, </span>
-<span id="cb33-67"><a href="#cb33-67" aria-hidden="true" tabindex="-1"></a>                                                                                                                                              <span class="dv">54510</span>L, <span class="dv">91326</span>L, <span class="dv">78611</span>L, <span class="dv">31402</span>L, <span class="dv">29586</span>L, <span class="dv">21441</span>L, <span class="dv">58269</span>L, <span class="dv">84173</span>L, </span>
-<span id="cb33-68"><a href="#cb33-68" aria-hidden="true" tabindex="-1"></a>                                                                                                                                              <span class="dv">88295</span>L, <span class="dv">37940</span>L, <span class="dv">43750</span>L, <span class="dv">69750</span>L, <span class="dv">92356</span>L, <span class="dv">82518</span>L, <span class="dv">91455</span>L, <span class="dv">68866</span>L, </span>
-<span id="cb33-69"><a href="#cb33-69" aria-hidden="true" tabindex="-1"></a>                                                                                                                                              <span class="dv">51178</span>L, <span class="dv">68275</span>L, <span class="dv">27689</span>L, <span class="dv">35418</span>L, <span class="dv">81318</span>L, <span class="dv">62405</span>L, <span class="dv">86851</span>L, <span class="dv">25654</span>L, </span>
-<span id="cb33-70"><a href="#cb33-70" aria-hidden="true" tabindex="-1"></a>                                                                                                                                              <span class="dv">47553</span>L, <span class="dv">74474</span>L, <span class="dv">51409</span>L, <span class="dv">22607</span>L, <span class="dv">55360</span>L, <span class="dv">96351</span>L, <span class="dv">21516</span>L, <span class="dv">41927</span>L, </span>
-<span id="cb33-71"><a href="#cb33-71" aria-hidden="true" tabindex="-1"></a>                                                                                                                                              <span class="dv">55810</span>L), <span class="at">education =</span> <span class="fu">c</span>(<span class="st">"master"</span>, <span class="st">"bachelor"</span>, <span class="st">"PhD"</span>, <span class="st">"master"</span>, </span>
-<span id="cb33-72"><a href="#cb33-72" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                     <span class="st">"bachelor"</span>, <span class="st">"highschool"</span>, <span class="st">"PhD"</span>, <span class="st">"highschool"</span>, <span class="st">"PhD"</span>, <span class="st">"PhD"</span>, </span>
-<span id="cb33-73"><a href="#cb33-73" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                     <span class="st">"bachelor"</span>, <span class="st">"highschool"</span>, <span class="st">"master"</span>, <span class="st">"bachelor"</span>, <span class="st">"PhD"</span>, <span class="st">"PhD"</span>, </span>
-<span id="cb33-74"><a href="#cb33-74" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                     <span class="st">"PhD"</span>, <span class="st">"bachelor"</span>, <span class="st">"master"</span>, <span class="st">"highschool"</span>, <span class="st">"PhD"</span>, <span class="st">"highschool"</span>, </span>
-<span id="cb33-75"><a href="#cb33-75" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                     <span class="st">"bachelor"</span>, <span class="st">"master"</span>, <span class="st">"highschool"</span>, <span class="st">"highschool"</span>, <span class="st">"master"</span>, </span>
-<span id="cb33-76"><a href="#cb33-76" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                     <span class="st">"master"</span>, <span class="st">"bachelor"</span>, <span class="st">"PhD"</span>, <span class="st">"highschool"</span>, <span class="st">"PhD"</span>, <span class="st">"master"</span>, </span>
-<span id="cb33-77"><a href="#cb33-77" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                     <span class="st">"master"</span>, <span class="st">"master"</span>, <span class="st">"PhD"</span>, <span class="st">"highschool"</span>, <span class="st">"master"</span>, <span class="st">"master"</span>, </span>
-<span id="cb33-78"><a href="#cb33-78" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                     <span class="st">"highschool"</span>, <span class="st">"bachelor"</span>, <span class="st">"highschool"</span>, <span class="st">"bachelor"</span>, <span class="st">"PhD"</span>, </span>
-<span id="cb33-79"><a href="#cb33-79" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                     <span class="st">"bachelor"</span>, <span class="st">"highschool"</span>, <span class="st">"master"</span>, <span class="st">"highschool"</span>, <span class="st">"bachelor"</span>, </span>
-<span id="cb33-80"><a href="#cb33-80" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                     <span class="st">"bachelor"</span>), <span class="at">region =</span> <span class="fu">c</span>(<span class="st">"North"</span>, <span class="st">"South"</span>, <span class="st">"North"</span>, <span class="st">"West"</span>, </span>
-<span id="cb33-81"><a href="#cb33-81" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                             <span class="st">"North"</span>, <span class="st">"West"</span>, <span class="st">"South"</span>, <span class="st">"South"</span>, <span class="st">"West"</span>, <span class="st">"South"</span>, <span class="st">"West"</span>, </span>
-<span id="cb33-82"><a href="#cb33-82" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                             <span class="st">"South"</span>, <span class="st">"West"</span>, <span class="st">"East"</span>, <span class="st">"North"</span>, <span class="st">"West"</span>, <span class="st">"North"</span>, <span class="st">"North"</span>, </span>
-<span id="cb33-83"><a href="#cb33-83" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                             <span class="st">"West"</span>, <span class="st">"North"</span>, <span class="st">"East"</span>, <span class="st">"West"</span>, <span class="st">"South"</span>, <span class="st">"North"</span>, <span class="st">"North"</span>, </span>
-<span id="cb33-84"><a href="#cb33-84" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                             <span class="st">"East"</span>, <span class="st">"East"</span>, <span class="st">"North"</span>, <span class="st">"North"</span>, <span class="st">"West"</span>, <span class="st">"South"</span>, <span class="st">"West"</span>, </span>
-<span id="cb33-85"><a href="#cb33-85" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                             <span class="st">"West"</span>, <span class="st">"East"</span>, <span class="st">"West"</span>, <span class="st">"North"</span>, <span class="st">"West"</span>, <span class="st">"North"</span>, <span class="st">"East"</span>, </span>
-<span id="cb33-86"><a href="#cb33-86" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                             <span class="st">"North"</span>, <span class="st">"West"</span>, <span class="st">"South"</span>, <span class="st">"South"</span>, <span class="st">"East"</span>, <span class="st">"North"</span>, <span class="st">"West"</span>, </span>
-<span id="cb33-87"><a href="#cb33-87" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                             <span class="st">"West"</span>, <span class="st">"East"</span>, <span class="st">"North"</span>, <span class="st">"East"</span>), <span class="at">marital_status =</span> <span class="fu">c</span>(<span class="st">"divorced"</span>, </span>
-<span id="cb33-88"><a href="#cb33-88" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                  <span class="st">"single"</span>, <span class="st">"divorced"</span>, <span class="st">"divorced"</span>, <span class="st">"divorced"</span>, <span class="st">"divorced"</span>, </span>
-<span id="cb33-89"><a href="#cb33-89" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                  <span class="st">"divorced"</span>, <span class="st">"married"</span>, <span class="st">"divorced"</span>, <span class="st">"married"</span>, <span class="st">"divorced"</span>, </span>
-<span id="cb33-90"><a href="#cb33-90" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                  <span class="st">"widowed"</span>, <span class="st">"married"</span>, <span class="st">"single"</span>, <span class="st">"widowed"</span>, <span class="st">"widowed"</span>, <span class="st">"single"</span>, </span>
-<span id="cb33-91"><a href="#cb33-91" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                  <span class="st">"divorced"</span>, <span class="st">"widowed"</span>, <span class="st">"widowed"</span>, <span class="st">"single"</span>, <span class="st">"married"</span>, <span class="st">"single"</span>, </span>
-<span id="cb33-92"><a href="#cb33-92" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                  <span class="st">"married"</span>, <span class="st">"widowed"</span>, <span class="st">"married"</span>, <span class="st">"single"</span>, <span class="st">"single"</span>, <span class="st">"widowed"</span>, </span>
-<span id="cb33-93"><a href="#cb33-93" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                  <span class="st">"married"</span>, <span class="st">"widowed"</span>, <span class="st">"divorced"</span>, <span class="st">"single"</span>, <span class="st">"married"</span>, <span class="st">"single"</span>, </span>
-<span id="cb33-94"><a href="#cb33-94" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                  <span class="st">"widowed"</span>, <span class="st">"widowed"</span>, <span class="st">"married"</span>, <span class="st">"widowed"</span>, <span class="st">"divorced"</span>, <span class="st">"married"</span>, </span>
-<span id="cb33-95"><a href="#cb33-95" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                  <span class="st">"married"</span>, <span class="st">"divorced"</span>, <span class="st">"single"</span>, <span class="st">"married"</span>, <span class="st">"widowed"</span>, <span class="st">"divorced"</span>, </span>
-<span id="cb33-96"><a href="#cb33-96" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                  <span class="st">"divorced"</span>, <span class="st">"single"</span>, <span class="st">"divorced"</span>)), <span class="at">row.names =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="sc">-</span><span class="dv">50</span>L</span>
-<span id="cb33-97"><a href="#cb33-97" aria-hidden="true" tabindex="-1"></a>                                                                                                                                                                                                                                                  ), <span class="at">class =</span> <span class="fu">c</span>(<span class="st">"tbl_df"</span>, <span class="st">"tbl"</span>, <span class="st">"data.frame"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="missing-entries" class="level3" data-number="1.7.1">
-<h3 data-number="1.7.1" class="anchored" data-anchor-id="missing-entries"><span class="header-section-number">1.7.1</span> Missing Entries</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>missing_values <span class="ot">&lt;-</span> weird_data <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span><span class="fu">sum</span>(<span class="fu">is.na</span>(.)), <span class="at">.names =</span> <span class="st">"missing_{.col}"</span>))</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>missing_values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>missing_values <span class="ot">&lt;-</span> weird_data <span class="sc">|&gt;</span> </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">everything</span>(), </span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>           <span class="sc">~</span><span class="fu">sum</span>(<span class="fu">is.na</span>(.)), </span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">.names =</span> <span class="st">"missing_{.col}"</span>))</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>missing_values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 15
   missing_id missing_age missing_gender missing_height missing_weight
@@ -664,7 +616,12 @@ The downloaded binary packages are in
 #   missing_exercise &lt;int&gt;, missing_income &lt;int&gt;, missing_education &lt;int&gt;,
 #   missing_region &lt;int&gt;, missing_marital_status &lt;int&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>missing_values <span class="sc">|&gt;</span> <span class="fu">pivot_longer</span>(<span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">"column"</span>, <span class="at">values_to =</span> <span class="st">"missing_count"</span>) <span class="sc">|&gt;</span> <span class="fu">filter</span>(missing_count<span class="sc">&gt;</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>missing_values <span class="sc">|&gt;</span> </span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">everything</span>(), </span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"column"</span>, </span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"missing_count"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(missing_count<span class="sc">&gt;</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 2
   column          missing_count
@@ -675,59 +632,59 @@ The downloaded binary packages are in
 </div>
 <p>This code checks all columns for NA values. The ~ makes this an anonymous function so we do not need to make the function, and the “.” is what tells the program to check the entire column. It then displays only the columns with missing values.</p>
 </section>
-<section id="typos" class="level3" data-number="1.7.2">
-<h3 data-number="1.7.2" class="anchored" data-anchor-id="typos"><span class="header-section-number">1.7.2</span> Typos</h3>
+<section id="typos" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="typos">Typos</h3>
 <p>To determine the number of typos, I made use of the <strong>viewcols()</strong> function that comes with the <strong>UtilsDataRSV</strong> package.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>UtilsDataRSV<span class="sc">::</span><span class="fu">view_cols</span>(weird_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>UtilsDataRSV<span class="sc">::</span><span class="fu">view_cols</span>(weird_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "id"
- [1] "id_38" "id_37" "id_11" "id_7"  "id_15" "id_9"  "id_27" "id_40" "id_33"
-[10] "id_4"  "id_49" "id_28" "id_12" "id_3"  "id_29" "id_44" "id_42" "id_6" 
-[19] "id_18" "id_8" 
+ [1] "id_29" "id_6"  "id_44" "id_36" "id_38" "id_49" "id_35" "id_15" "id_47"
+[10] "id_5"  "id_2"  "id_25" "id_13" "id_23" "id_40" "id_31" "id_4"  "id_1" 
+[19] "id_7"  "id_39"
 [1] "30 unique entries not displayed"
 [1] "_____________________"
 [1] "age"
-[1] 36 62 56 42 70
+[1] 38 60 54 34 79
 [1] "_____________________"
 [1] "gender"
 [1] "female" "femal"  "male"  
 [1] "_____________________"
 [1] "height"
-[1] 196.8 165.1 176.1 154.6    NA
+[1] 199.2 194.5 199.0 168.5    NA
 [1] "_____________________"
 [1] "weight"
-[1] 73.3 76.7 81.0 95.1 72.2
+[1] 75.1 68.6 92.0 78.6 61.9
 [1] "_____________________"
 [1] "blood_type"
-[1] "A"  "AB" "O"  "B" 
+[1] "O"  "A"  "B"  "AB"
 [1] "_____________________"
 [1] "disease_status"
-[1] "diseased" "healthy"  "Healthy" 
+[1] "diseased" "Healthy"  "healthy" 
 [1] "_____________________"
 [1] "cholesterol"
-[1] 235 234 173 180 156
+[1] 173 221 212 248 228
 [1] "_____________________"
 [1] "glucose"
-[1] 113  90  89  97  NA
+[1]  71  82 120  75  NA
 [1] "_____________________"
 [1] "smoker"
 [1] "no"  "yes"
 [1] "_____________________"
 [1] "exercise"
-[1] "occasional" "regular"    "none"      
+[1] "occasional" "none"       "regular"   
 [1] "_____________________"
 [1] "income"
-[1] 21516 68866 72490 69750 62615
+[1] 25654 77584 77275 38468 27689
 [1] "_____________________"
 [1] "education"
-[1] "PhD"        "master"     "highschool" "bachelor"  
+[1] "bachelor"   "master"     "PhD"        "highschool"
 [1] "_____________________"
 [1] "region"
-[1] "South" "East"  "West"  "North"
+[1] "East"  "South" "North" "West" 
 [1] "_____________________"
 [1] "marital_status"
-[1] "single"   "divorced" "married"  "widowed" 
+[1] "single"   "widowed"  "married"  "divorced"
 [1] "_____________________"</code></pre>
 </div>
 </div>
